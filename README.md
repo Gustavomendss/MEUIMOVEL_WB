@@ -1,7 +1,5 @@
-
-
-![TELA_1.jpg](MEUIMOVEL_WB/blob/main/MEUIMOVEL_WEB/static/img/TELA_1.jpg)
-
+### TELA DE INICIO
+<img src="MEUIMOVEL_WEB/static/img/TELA_1.jpg " width="1000"> 
 
 ### DIRETRIZES PARA CRIAÇÃO DO SITE MEUIMOVEL
 
