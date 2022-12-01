@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+  <title>
+
+        {% block title %}
+            LineUp Application
+        {% endblock %}
+
+
+    </title>
+    <link rel="shortcut icon" href="/static/img/favicon.png"/>
+    <!link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!link rel="stylesheet" href='/static/css/base.css'/>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container">
+        <p>
+        </p>
+      </div>
+    </div>
+    <p>
+
+    {% load static %} <img src="/static/img/home2.png" alt="home" style="width:1024px;height:340px />
+
+    </p>
+
+
+    <div class="col-sm-7">
+        <div class="row">
+          <div class="col-sm-12" >
+            <div class="panel panel-default text-left">
+              <div class="panel-body" >
+                <h4 contenteditable="true">Olá bem-vindo ao LineUp ! <br>
+                    Liste aqui todas as suas tarefas e matenha a organização. &#9200; &#128079
+                    </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <h2>
+          Lista de Tarefas
+        </h2>
+
+        <div class="row">
+          <div class="col-sm-9">
+          {% for todo in list_todo %}
+            {% if not todo.status %}
+                <div class="well">
+                  <h4>{{ todo.name }}</h4>
+                  <a href="{% url 'mark_as_done' todo.id  %}">Marcar como realizado   &#9989;</a>
+                </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+        <h2>
+          Criar nova tarefa
+        </h2>
+      </div>
+
+        <div class="col-sm-9">
+          <div class="well">
+            <form method="POST" action="{% url 'new_todo' %}" id="input-text" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input type="textarea" style="width: 450px;" name="todo-name">
+              <button type="submit" value="Submit" class="btn btn-primary">Criar uma nova tarefa </button>
+            </form>
+          </div>
+        </div>
+
+
+    <div class="row">
+      <button onclick="myFunction()">Realizar Logout!</button>
+    </div>
+
+
+  </div>
+  </div>
+</div>
+</body>
+
+<style>
+
+body {
+
+  color: auto;
+
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(31,29,49,0.9809441339401972) 99%);
+
+}
+.dark-mode {
+  background-color: black;
+  color: auto;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.text-center {
+  text-align: center;
+
+
+}
+
+h2 {
+color: white;
+margin: 20px 20px
+
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  max-height:100%;
+}
+
+
+
+</style>
+
+<script>
+  function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  }
+</script>
+</html>
