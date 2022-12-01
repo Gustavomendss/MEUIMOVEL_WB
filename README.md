@@ -1,6 +1,6 @@
 
 
-![tela_1.jpg](MEUIMOVEL_WEB/static/img/img.png)
+![TELA_1.jpg](MEUIMOVEL_WB/blob/main/MEUIMOVEL_WEB/static/img/TELA_1.jpg)
 
 
 ### DIRETRIZES PARA CRIAÇÃO DO SITE MEUIMOVEL
